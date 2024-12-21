@@ -1,20 +1,8 @@
-
 use std::fs::File;
 use std::path::Path;
 use std::io::{BufReader, BufRead};
 
-fn parse_line(line: &str, digits: &mut Vec<u32>) {
-    let tokens: Vec<&str> = line.trim()
-        .split(' ')
-        .collect();
-
-    for token in tokens {
-        if token != "" {
-            let digit: u32 = token.parse().unwrap();
-            digits.push(digit);
-        }
-    }
-}
+use crate::day2::parse_line;
 
 fn is_safe(digits: &Vec<u32>) -> bool {
     let mut safe: bool = true;
